@@ -2,7 +2,7 @@ import pyautogui
 import keyboard
 import time
 
-num_captures = 118
+num_captures = 953
 current_captures = 0
 
 def capture_and_save(x, y, width, height):
@@ -13,7 +13,7 @@ def capture_and_save(x, y, width, height):
         print(f'Captured image_{current_captures}.png')
 
         pyautogui.press('right')
-        time.sleep(0.03) 
+        time.sleep(0.0001) 
         current_captures += 1
     if current_captures >= num_captures:
         print("Completed all captures.")
@@ -24,15 +24,11 @@ def start_capture():
     current_captures = 0
     print("Starting captures...")
     while current_captures < num_captures:
-        capture_and_save(296, 100, 1381, 900)  
-        time.sleep(0.03)  
+        capture_and_save(141, 441, 795, 998)  
+        time.sleep(0.0001)  
 
 
 keyboard.add_hotkey('s', start_capture)
-
-print("Press 's' to start capture, ESC to stop.")
-keyboard.wait('esc')
-
 
 print("Press 's' to start capture, ESC to stop.")
 keyboard.wait('esc')
