@@ -2,15 +2,16 @@ import pyautogui
 import keyboard
 import time
 
-num_captures = 953
+num_captures = 119
 current_captures = 0
 
 def capture_and_save(x, y, width, height):
     global current_captures
     if current_captures < num_captures:
         screenshot = pyautogui.screenshot(region=(x, y, width, height))
-        screenshot.save(f'./img/image_{current_captures}.png')
-        print(f'Captured image_{current_captures}.png')
+        formatted_number = str(current_captures).zfill(4)
+        screenshot.save(f'./img/image_{formatted_number}.png')
+        print(f'Captured image_{formatted_number}.png')
 
         pyautogui.press('right')
         time.sleep(0.0001) 
@@ -24,7 +25,7 @@ def start_capture():
     current_captures = 0
     print("Starting captures...")
     while current_captures < num_captures:
-        capture_and_save(141, 441, 795, 998)  
+        capture_and_save(257, 74, 1401, 951)  
         time.sleep(0.0001)  
 
 
